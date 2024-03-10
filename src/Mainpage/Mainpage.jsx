@@ -7,15 +7,13 @@ import Stock from "../Stock/Stock"
 
 export default function Mainpage() {
 
-    const [pickedStock, setPickedStock] = useState({})
-
   return (
     <main>
         <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/stocks" element={<Dashboard />} />
-            <Route path="/stock/:symbol" element={<Stock pickedStock={setPickedStock}/>} />
+            <Route path="/stock/:symbol" element={<Stock />} />
         </Routes>
     </main>
   )

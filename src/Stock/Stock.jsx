@@ -1,16 +1,19 @@
+import { useParams } from 'react-router-dom'
+import stocks from '../stockdata'
 
+const Stock = (props) => {
 
-const Stock = props => {
+    const { symbol } = useParams()
+    
+    const indStock = stocks.find(stock => stock.symbol === symbol)
 
-    const stock = 'https://financialmodelingprep.com/api/v3/profile/AAPL?apikey=YOUR KEY'
-  
     return (
-        console.log('props-stock component', props)
-    //   <div>
-    //     <h2>{stocks.name}</h2>
-    //     <h3>{stocks.symbol}</h3>
-    //     <h3 className="price">Price: ${stocks.lastPrice}</h3>
-    //   </div>
+        <div>
+            <h1>{indStock.name}</h1>
+            <h1>{indStock.symbol}</h1>
+            <h1>{indStock.lastPrice}</h1>
+        </div>
+
     )
   }
   
